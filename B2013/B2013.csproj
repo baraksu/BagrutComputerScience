@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2F14A31C-586F-4303-A9A8-B4339D32B8D5}</ProjectGuid>
+    <ProjectGuid>{5C34E991-C94A-4D23-87DA-BC1DD8DACF16}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>B2021a</RootNamespace>
-    <AssemblyName>B2021a</AssemblyName>
+    <RootNamespace>B2013</RootNamespace>
+    <AssemblyName>B2013</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,26 +48,9 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Q02\ReportCard.cs" />
-    <Compile Include="Q02\Subject.cs" />
-    <Compile Include="Q04\BiList.cs" />
-    <Compile Include="Q3\MyString.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Infra\Infra.csproj">
-      <Project>{BB2EC606-B180-4992-B3A0-95C3954E2F93}</Project>
-      <Name>Infra</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Q05\" />
-    <Folder Include="Q07\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Q06\HTMLPage1.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
