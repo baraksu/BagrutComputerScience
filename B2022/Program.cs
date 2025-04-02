@@ -16,9 +16,9 @@ namespace B2022
 
             int[] result = Multiple(arr1, arr2);
             Console.WriteLine("---Q01---");
-            Infra.Helper.PrintArray(arr1);
-            Infra.Helper.PrintArray(arr2);
-            Infra.Helper.PrintArray(result);
+            Infra.Helper.Print(arr1);
+            Infra.Helper.Print(arr2);
+            Infra.Helper.Print(result);
 
             Console.ReadKey();
         }

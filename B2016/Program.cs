@@ -27,11 +27,26 @@ namespace B2016
                     2,
                     null));
 
+            BinNode<int> t2 = new BinNode<int>(
+                new BinNode<int>(
+                    new BinNode<int> (
+                        null,
+                        3,
+                        new BinNode<int> (
+                            null,
+                            8,
+                            null)),
+                    6,
+                    null),
+                1,
+                null);
+
+
             TreeCanvas.AddTree(t1);
             TreeCanvas.PrintOutAllElements(true);
-            TreeCanvas.TreeDrawInOrder();
-            Console.WriteLine("\n Q02");
-            Console.WriteLine(UpPath(t1));
+            TreeCanvas.TreeDrawPostOrder();
+           // Console.WriteLine("\n Q02");
+            //Console.WriteLine(UpPath(t1));
         }
 
         public static bool UpPath(BinNode<int> t)

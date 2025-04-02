@@ -141,12 +141,12 @@ namespace B2021a
             int num = 0;
             while (pos!= null)
             {
-                num = ListHelper.Max(pos);
-                pos = ListHelper.Delete(pos, num);
+                num = NodeHelper.Max(pos);
+                pos = NodeHelper.Delete(pos, num);
                 biList.AddNum(num,1);
 
-                num = ListHelper.Min(pos);
-                pos = ListHelper.Delete(pos, num);
+                num = NodeHelper.Min(pos);
+                pos = NodeHelper.Delete(pos, num);
                 biList.AddNum(num, 2);
 
             }
@@ -155,7 +155,7 @@ namespace B2021a
 
         public static Node<int> Move (Node<int> lst, int n)
         {
-            int size = ListHelper.Size(lst);
+            int size = NodeHelper.Size(lst);
 
             // 5 חוליות
             // העבר 2
@@ -184,7 +184,7 @@ namespace B2021a
 
         public static bool IsIdentical (Queue<int> q1, Queue<int> q2)
         {
-            if (Infra.Helper.Size(q1) != Infra.Helper.Size(q2))
+            if (Infra.QueueHelper.Size(q1) != Infra.QueueHelper.Size(q2))
             {
                 return false;
             }
@@ -210,8 +210,8 @@ namespace B2021a
 
         public static bool IsSimilar (Queue<int> q1, Queue<int> q2)
         {
-            int size1 = Infra.Helper.Size(q1);
-            int size2 = Infra.Helper.Size(q2);
+            int size1 = Infra.QueueHelper.Size(q1);
+            int size2 = Infra.QueueHelper.Size(q2);
             if (size1 != size2)
             {
                 return false;

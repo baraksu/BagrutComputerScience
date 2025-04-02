@@ -33,12 +33,12 @@ namespace B2021a.Q04
         {
             if (codeList == 1)
             {
-                lst1 = ListHelper.AddAtEnd(lst1, num);
+                lst1 = NodeHelper.AddAtEnd(lst1, num);
                 //lst1 = ListHelper.AddAtStart(lst1, num);
             }
             else if (codeList == 2)
             {
-                lst2 = ListHelper.AddAtEnd(lst2, num);
+                lst2 = NodeHelper.AddAtEnd(lst2, num);
             }
 
         }

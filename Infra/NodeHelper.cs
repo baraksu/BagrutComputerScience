@@ -3,7 +3,7 @@ using Unit4.CollectionsLib;
 
 namespace Infra
 {
-    public class ListHelper
+    public class NodeHelper
     {
         //ומסירה ממנו את כל האיברים שערכם הוא המספר הנוסף שהתקבל כפרמטר // (Node) פעולה המקבלת רשימה
         //    הפעולה מחזירה רשימה )חוליה ראשונה(. מכיון שיש סיכוי שהאיבר שהוצא הוא האיבר הראשון ברשימה. //
@@ -101,6 +101,7 @@ namespace Infra
                 Console.Write(p.GetValue() + " ");
                 p = p.GetNext();
             }
+            Console.WriteLine();
 
         }
 

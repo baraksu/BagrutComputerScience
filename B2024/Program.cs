@@ -157,7 +157,7 @@ namespace B2024
 
         public static bool NMagic(Queue<int> queue, int n)
         {
-            int size = Infra.Helper.Size(queue);
+            int size = Infra.QueueHelper.Size(queue);
 
             int k = n;
             bool all = true;
