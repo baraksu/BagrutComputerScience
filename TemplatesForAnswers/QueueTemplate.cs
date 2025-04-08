@@ -1,4 +1,5 @@
-﻿using Unit4.CollectionsLib;
+﻿using System;
+using Unit4.CollectionsLib;
 
 namespace TemplatesForAnswers
 {
@@ -30,6 +31,24 @@ namespace TemplatesForAnswers
             {
                 q.Insert(temp.Remove());
             }
+        }
+        public static void Print<T>(Queue<T> q)
+        {
+            Queue<T> tmp = new Queue<T>();
+            while (!q.IsEmpty())
+            {
+                tmp.Insert(q.Head());
+                Console.WriteLine(q.Remove());
+            }
+            Copy(tmp, q);
+        }
+        public static void Copy<T>(Queue<T> q1, Queue<T> q2)
+        {
+            while (!q1.IsEmpty())
+            {
+                q2.Insert(q1.Remove());
+            }
+
         }
     }
 }

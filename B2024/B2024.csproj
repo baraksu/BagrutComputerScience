@@ -50,6 +50,8 @@
     <Compile Include="Member.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Q05\Patient.cs" />
+    <Compile Include="Q05\PriorQueue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -59,6 +61,11 @@
       <Project>{bb2ec606-b180-4992-b3a0-95c3954e2f93}</Project>
       <Name>Infra</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TemplatesForAnswers\TemplatesForAnswers.csproj">
+      <Project>{3ff1cfc2-50b1-44b4-be60-e5945de67ff5}</Project>
+      <Name>TemplatesForAnswers</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
