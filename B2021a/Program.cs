@@ -52,14 +52,20 @@ namespace B2021a
             Queue<int> q1 = new Queue<int>();
             q1.Insert(1);
             q1.Insert(2);
-            
+            q1.Insert(3);
+
+
             Queue<int> q2 = new Queue<int>();
-            q2.Insert(1);
             q2.Insert(2);
+            q2.Insert(3);
+            q2.Insert(1);
+          
             Console.WriteLine("\n Print b2021 Q07 q1 ");
-            bool same = IsIdentical(q1, q2);
-            Console.WriteLine($"q1:q2= {same}");
-            q2.Insert(q2.Remove());
+           // bool same = IsIdentical(q1, q2);
+           // bool same = IsIdenticalA(q1, q2);
+            //Console.WriteLine($"q1:q2= {same}");
+            //q2.Insert(q2.Remove());
+            //bool rotate = IsSimilarA(q1, q2);
             bool rotate = IsSimilar(q1, q2);
             Console.WriteLine($"q1:q2= {rotate}");
 
@@ -67,6 +73,73 @@ namespace B2021a
 
 
         }
+
+        private static bool IsSimilar(Queue<int> q1, Queue<int> q2)
+        {
+            if (q1.Size() != q2.Size())
+                    return false;
+
+            for (int i = 0; i < q1.Size(); i++)
+            {
+                if (IsIdentical(q1, q2))
+                    return true;
+                q1.Insert(q1.Remove());
+            }
+            return false;
+            
+        }
+
+        private static bool IsIdentical(Queue<int> q1, Queue<int> q2)
+        {
+            // לכל לבין קיים
+            // 
+            // אם גודל לא שווה תחזיר false
+            // 
+            Queue<int> tmp1 = new Queue<int>();
+            Queue<int> tmp2 = new Queue<int>();
+
+            if (q1.Size() != q2.Size())
+            {
+                return false;
+            }
+            Clone(q1, tmp1);
+            Clone(q2, tmp2);
+            // הגדלים שווים
+            while (!tmp1.IsEmpty())
+            {
+                if (tmp1.Remove() != tmp2.Remove())
+                {
+                    return false;
+                }
+            }
+            return true;
+
+
+
+        }
+
+        public static void Copy<T>(Queue<T> q1, Queue<T> q2)
+        {
+            while (!q1.IsEmpty())
+            {
+                q2.Insert(q1.Remove());
+            }
+        }
+        // טענת כניסה: מקבל שני תורים שאינם null
+        // טענת יציאה: משכפלת את התור ושומרת עליו
+        public static void Clone<T>(Queue<T> q1, Queue<T> q2)
+        {
+            Queue<T> tmp = new Queue<T>();
+
+            while (!q1.IsEmpty())
+            {
+                q2.Insert(q1.Head());
+                tmp.Insert(q1.Remove());
+            }
+            Copy(tmp, q1);
+
+        }
+
         //Q1
         // דגשים
         // להשתמש בפעולת עזר
@@ -89,7 +162,7 @@ namespace B2021a
             return newArr;
         }
         //טענת כניסה, מערך לא ריק , מספר שלם
-    // טענת יציאה מחזיר מספר אברים במערך שאינם שווים ל נאם
+        // טענת יציאה מחזיר מספר אברים במערך שאינם שווים ל נאם
 
         private static int GetFilterArraySize(int[] arr, int num)
         {
@@ -134,16 +207,16 @@ namespace B2021a
             }
             return newSpecial;
         }
-        public static BiList GenerateBiList (Node<int> lst)
+        public static BiList GenerateBiList(Node<int> lst)
         {
             BiList biList = new BiList();
             Node<int> pos = lst;
             int num = 0;
-            while (pos!= null)
+            while (pos != null)
             {
                 num = NodeHelper.Max(pos);
                 pos = NodeHelper.Delete(pos, num);
-                biList.AddNum(num,1);
+                biList.AddNum(num, 1);
 
                 num = NodeHelper.Min(pos);
                 pos = NodeHelper.Delete(pos, num);
@@ -153,7 +226,7 @@ namespace B2021a
             return biList;
         }
 
-        public static Node<int> Move (Node<int> lst, int n)
+        public static Node<int> Move(Node<int> lst, int n)
         {
             int size = NodeHelper.Size(lst);
 
@@ -161,9 +234,9 @@ namespace B2021a
             // העבר 2
             // השאר 3
 
-            int k = size - n - 1 ;
+            int k = size - n - 1;
             Node<int> pos = lst;
-            while (k> 0)
+            while (k > 0)
             {
                 pos = pos.GetNext();
                 k--;
@@ -172,7 +245,7 @@ namespace B2021a
             pos.SetNext(null);
 
             pos = newLst;
-            while(pos.GetNext() != null)
+            while (pos.GetNext() != null)
             {
                 pos = pos.GetNext();
             }
@@ -182,7 +255,7 @@ namespace B2021a
 
         }
 
-        public static bool IsIdentical (Queue<int> q1, Queue<int> q2)
+        public static bool IsIdenticalA(Queue<int> q1, Queue<int> q2)
         {
             if (Infra.QueueHelper.Size(q1) != Infra.QueueHelper.Size(q2))
             {
@@ -208,7 +281,7 @@ namespace B2021a
             return identical;
         }
 
-        public static bool IsSimilar (Queue<int> q1, Queue<int> q2)
+        public static bool IsSimilarA(Queue<int> q1, Queue<int> q2)
         {
             int size1 = Infra.QueueHelper.Size(q1);
             int size2 = Infra.QueueHelper.Size(q2);
@@ -218,7 +291,7 @@ namespace B2021a
             }
             for (int i = 0; i < size1; i++)
             {
-                if (IsIdentical(q1, q2))
+                if (IsIdenticalA(q1, q2))
                 {
                     return true;
                 }

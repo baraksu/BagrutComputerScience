@@ -102,6 +102,9 @@ namespace B2024
             
             Console.WriteLine(q.ToString());
 
+            pq.Update(72898, 9);
+            Console.WriteLine(q.ToString());
+
             Console.ReadKey();
 
 

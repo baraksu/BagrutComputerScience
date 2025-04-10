@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2CB7E7C5-8182-46F2-A3B1-3B492C1B4A0A}</ProjectGuid>
+    <ProjectGuid>{7CDBF487-18CC-4D51-9621-59406CD05757}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>B2023</RootNamespace>
-    <AssemblyName>B2023</AssemblyName>
+    <RootNamespace>Herzug2024</RootNamespace>
+    <AssemblyName>Herzug2024</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,15 +48,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Q04\PriorityItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Infra\Infra.csproj">
-      <Project>{bb2ec606-b180-4992-b3a0-95c3954e2f93}</Project>
-      <Name>Infra</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
