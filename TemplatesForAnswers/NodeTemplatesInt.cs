@@ -2,7 +2,7 @@
 
 namespace TemplatesForAnswers
 {
-    public class NodeIntTemplates
+    public class NodeTemplatesInt
     {
         public static void PrintNode(Node<int> node)
         {

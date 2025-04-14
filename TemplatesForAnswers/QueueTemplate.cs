@@ -1,11 +1,12 @@
-﻿using System;
+﻿using B2024.Q05;
+using System;
 using Unit4.CollectionsLib;
 
 namespace TemplatesForAnswers
 {
     public class QueueTemplate
     {
-        
+
         public static void Insert(Queue<NumCount> q, int x)
         {
             Queue<NumCount> temp = new Queue<NumCount>();
@@ -32,6 +33,25 @@ namespace TemplatesForAnswers
                 q.Insert(temp.Remove());
             }
         }
+
+        public static void PriorityInsert(Queue<Patient> q, Patient p)
+        {
+            // בנה תור זמני
+            // הכנס לתור כל עוד מתקיים תנאי
+            // הכנס פי
+            // העבר שאר לתור זמני
+            // העבר מזמני לתור
+            Queue<Patient> tmp = new Queue<Patient>();
+
+            while (!q.IsEmpty() && q.Head().GetPriority() >= p.GetPriority())
+            {
+                tmp.Insert(q.Remove());
+            }
+            tmp.Insert(p);
+            Copy(q, tmp);
+            Copy(tmp, q);
+
+        }
         public static void Print<T>(Queue<T> q)
         {
             Queue<T> tmp = new Queue<T>();
@@ -47,6 +67,21 @@ namespace TemplatesForAnswers
             while (!q1.IsEmpty())
             {
                 q2.Insert(q1.Remove());
+            }
+
+        }
+
+        public static void Clone<T>(Queue<T> q1, Queue<T> q2)
+        {
+            Queue<T> tmp = new Queue<T>();
+            while (!q1.IsEmpty())
+            {
+                tmp.Insert(q1.Remove());
+            }
+            while (!tmp.IsEmpty())
+            {
+                q1.Insert(tmp.Head());
+                q2.Insert(tmp.Remove());
             }
 
         }

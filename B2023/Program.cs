@@ -13,10 +13,23 @@ namespace B2023
     {
         static void Main(string[] args)
         {
-            // להכניס איבר לתור
-            // בטוח שהאיבר לא חלק מתור
-            //  ידוע לי מספר האיברים
-
+            Console.WriteLine("-- Q02 --");
+            OrderedList orderedList = new OrderedList();
+            NodeHelper.Print(orderedList.GetLst());
+            orderedList.InsertNum(5);
+            NodeHelper.Print(orderedList.GetLst());
+            orderedList.InsertNum(4);
+            NodeHelper.Print(orderedList.GetLst());
+            orderedList.InsertNum(6);
+            NodeHelper.Print(orderedList.GetLst());
+            orderedList.InsertNum(4);
+            NodeHelper.Print(orderedList.GetLst());
+            orderedList.InsertNum(2);
+            NodeHelper.Print(orderedList.GetLst());
+            orderedList.InsertNum(2);
+            orderedList.InsertNum(6);
+            NodeHelper.Print(orderedList.GetLst());
+            
 
         }
 

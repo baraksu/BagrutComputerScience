@@ -46,9 +46,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NodeIntTemplates.cs" />
-    <Compile Include="NodeNumCountTemplate.cs" />
+    <Compile Include="NodeTemplatesInt.cs" />
+    <Compile Include="NodeTemplateObj.cs" />
+    <Compile Include="NodeTemplateT.cs" />
     <Compile Include="NumCount.cs" />
+    <Compile Include="Patient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueTemplate.cs" />
